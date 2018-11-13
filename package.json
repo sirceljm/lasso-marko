@@ -1,5 +1,5 @@
 {
-  "name": "lasso-marko",
+  "name": "@awly/lasso-marko",
   "description": "Lasso.js plugin to support compilation of Marko templates",
   "keywords": [
     "lasso",
@@ -22,15 +22,15 @@
   "maintainers": "Patrick Steele-Idem <pnidem@gmail.com>",
   "devDependencies": {
     "chai": "^4.1.2",
-    "lasso": "^3.2.1",
-    "marko": "^4.12.1",
+    "@awly/lasso": "^3.2.1",
+    "@awly/marko": "^4.12.1",
     "mocha": "^5.2.0",
     "semver": "^5.5.0",
     "vertest": "^1.0.2"
   },
   "peerDependencies": {
-    "lasso": "^2.11.9 || ^3",
-    "marko": "^3.4.5 || ^4"
+    "@awly/lasso": "^2.11.9 || ^3",
+    "@awly/marko": "^3.4.5 || ^4"
   },
   "license": "Apache-2.0",
   "bin": {},

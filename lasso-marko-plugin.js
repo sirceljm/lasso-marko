@@ -7,8 +7,8 @@ var isDevelopment =
 
 var callbackify = require('callbackify');
 var nodePath = require('path');
-var lassoVersion = require('lasso/package').version.split('.');
-var markoVersion = require('marko/package').version.split('.');
+var lassoVersion = require('@awly/lasso/package').version.split('.');
+var markoVersion = require('@awly/marko/package').version.split('.');
 
 // marko package types are supported with lasso >= 3 and marko >= 4.7
 var isPackageTypesSupported = lassoVersion[0] >= 3 && (markoVersion[0] > 4 || (markoVersion[0] == 4 && markoVersion[1] >= 7));
@@ -16,7 +16,7 @@ var isPackageTypesSupported = lassoVersion[0] >= 3 && (markoVersion[0] > 4 || (m
 module.exports = function(lasso, config) {
     config = config || {};
 
-    var compiler = config.compiler || require('marko/compiler');
+    var compiler = config.compiler || require('@awly/marko/compiler');
 
     var defaultOutput = compiler.isVDOMSupported ? 'vdom' : 'html';
 
@@ -93,19 +93,19 @@ module.exports = function(lasso, config) {
                         run: true,
                         virtualModule: getVirtualModule({
                             path: this.path + '.register.js',
-                            code: `require('marko/components').register(
+                            code: `require('@awly/marko/components').register(
                                 '${meta.id}',
                                 require('${meta.component}')
                             );`
                         })
                     });
-                } 
-                
+                }
+
                 if (meta.deps) {
                     dependencies = dependencies.concat(meta.deps.map(dep => (
                         dep.code ? {
                             type: dep.type,
-                            code: dep.code 
+                            code: dep.code
                         } : {
                             type: dep.includes(':') ? dep.slice(0, dep.indexOf(':')) : 'require',
                             path: this.resolvePath(dep, nodePath.dirname(this.path))
