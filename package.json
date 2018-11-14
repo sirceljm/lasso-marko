@@ -23,7 +23,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "@awly/lasso": "^3.2.1",
-    "@awly/marko": "^4.12.1",
+    "@awly/marko": "^4.13.9-alpha.0",
     "mocha": "^5.2.0",
     "semver": "^5.5.0",
     "vertest": "^1.0.2"
@@ -38,7 +38,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "version": "2.4.5",
+  "version": "2.4.6",
   "dependencies": {
     "callbackify": "^1.1.0"
   }
